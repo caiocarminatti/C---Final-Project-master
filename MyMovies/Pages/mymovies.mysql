@@ -1,0 +1,13 @@
+﻿@page
+@{
+    ViewData["Title"] = "mymovies";
+}
+
+CREATE DATABASE mymovies;
+USE mymovies;
+CREATE TABLE users (
+	user_id int(10) auto_increment primary key not null,
+    username varchar(100) unique not null,
+    password varchar(100) not null
+);
+

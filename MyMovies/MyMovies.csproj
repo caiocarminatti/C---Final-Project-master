@@ -6,6 +6,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pages\Connect.php" />
+    <None Remove="Pages\mymovies.mysql" />
+    <None Remove="Pages\SaveRegistration.php" />
+    <None Remove="Pages\Validate.php" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Pages\Connect.php" />
+    <Content Include="Pages\mymovies.mysql" />
+    <Content Include="Pages\SaveRegistration.php" />
+    <Content Include="Pages\Validate.php" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.13.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
