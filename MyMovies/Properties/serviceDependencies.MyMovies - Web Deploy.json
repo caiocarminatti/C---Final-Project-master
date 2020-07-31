@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "appInsights1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroup')]/providers/microsoft.insights/components/WebApplication1",
+      "type": "appInsights.azure",
+      "connectionId": "APPINSIGHTS_INSTRUMENTATIONKEY",
+      "secretStore": "AzureAppSettings"
+    },
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroup')]/providers/Microsoft.Sql/servers/webapplication1db/databases/MyMovies_db",
+      "type": "mssql.azure",
+      "connectionId": "MyMoviesContext",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

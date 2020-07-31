@@ -1,0 +1,43 @@
+﻿@page
+@model MyMovies.Pages.Movies.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.PublicationYear)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.PublicationYear)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Pages)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Pages)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Movie.Total)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Movie.Total)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-secondary" asp-page="./Edit" asp-route-id="@Model.Movie.Id">Update</a> |
+    <a class="btn btn-dark" asp-page="./Index">Back</a>
+</div>

@@ -1,0 +1,54 @@
+﻿@page
+@model MyMovies.Pages.Movies.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2></h2>
+
+<p>
+    <a class="btn btn-outline-secondary" asp-page="Create">Insert New Movie</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].PublicationYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Pages)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Total)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Movie) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublicationYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pages)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                <a class="btn btn-dark" asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a class="btn btn-dark" asp-page="./Edit" asp-route-id="@item.Id">Update</a> |
+                <a class="btn btn-dark" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

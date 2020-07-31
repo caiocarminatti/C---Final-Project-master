@@ -1,0 +1,34 @@
+﻿@page
+@model AboutModel
+@{ ViewData["Title"] = "What Movie Are You Looking For?"; }
+
+<h2>@ViewData["Title"]</h2>
+
+
+<p>Search for movies title to know more about it.</p>
+
+<input onkeyup="serachmovie(document.getElementById('omdb').value)" id="omdb"> 
+<div id="return"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+
+function serachmovie(path){
+    var content;
+    $.get("https://www.omdbapi.com/?s=" + path + "&apikey=ab409d12", function (allinfo) {
+
+       // for (var i = 0; i < 6; i++) {
+            var allinfostr = JSON.stringify(allinfo);
+            content = JSON.parse(allinfostr);
+            var movietitle = content.Search[0].Title;
+            var movieyear = content.Search[0].Year;
+            var urlfromimdb = "https://www.imdb.com/title/" + content.Search[0].imdbID + "/";
+
+            var urlreturned = content.Search[0].Poster;
+
+            document.getElementById('return').innerHTML = "<h1>"
+                + movietitle + "</h1><br> <img src= '"
+                + urlreturned + "'><br><p> Year Released: "
+                + movieyear + "</p>";
+      //  }
+    });
+}</script>
